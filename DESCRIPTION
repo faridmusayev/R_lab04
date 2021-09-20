@@ -1,16 +1,20 @@
 Package: lab04
-Title: What the Package Does (One Line, Title Case)
+Title: Multiple Linear Regression
 Version: 0.0.0.9000
-Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Authors@R: c(
+    person(given = "Farid", family = "Musayev", role = c("cre"), email = "farmu437@student.liu.se"),
+    person(given = "Mücahit", family = "Sahin", role = c("aut"), email = "mucsa806@student.liu.se"),
+    person(given = "Selen", family = "Karaduman", role = c("aut"), email = "selka266@student.liu.se"))
+Description: This package is a simplistic implementation of "lm" package available in base R. 
+    Implementation is done using RC class objects.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Depends:
+    ggplot2,
+    gridExtra
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
