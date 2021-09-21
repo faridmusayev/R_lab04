@@ -14,7 +14,10 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Depends:
     ggplot2,
-    gridExtra
+    gridExtra,
+    pander,
+    qpdf,
+    methods
 Suggests: 
     rmarkdown,
     knitr,

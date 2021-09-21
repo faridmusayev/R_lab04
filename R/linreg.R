@@ -19,8 +19,10 @@
 #' standard error, t-value, p-value and residueal standard error from a given formula and data frame
 #' @export
 #'
-#' @examples
-#' linreg$new(Petal.Length~Species, data=iris)
+#'
+#'
+#'
+#'
 linreg<-setRefClass("linreg",
                     fields=list(formula='formula',data='data.frame',data_name="character",
                                 coefficients="numeric", resids="numeric",

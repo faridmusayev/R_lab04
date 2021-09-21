@@ -37,6 +37,3 @@ This is a multiple linear regression model that take two inputs (formula,data) t
 }}
 
 
-\examples{
-linreg$new(Petal.Length~Species, data=iris)
-}
