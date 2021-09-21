@@ -172,3 +172,41 @@ linreg$methods(initialize=function(formula,data){
 
   cat("Well done, my brave knight. Now...off with your head.\n")
 })
+
+#BEN BÖYLE YAPTIM DIŞA EKLEDİM BAKIN DİYE#
+
+summary = function(){
+                        
+                          
+                          beta<-Coefficients
+                          namn<-names(beta)
+                          names(beta)<-NULL
+                          beta<-round(beta,4)
+                          
+                          for(i in 1:length(beta)){
+                            beta[i]<-format(beta[i], width=max(nchar(beta[i]),nchar(namn[i])),justify = c("right"))
+                            namn[i]<-format(namn[i], width=max(nchar(beta[i]),nchar(namn[i])),justify = c("right"))
+                          }
+                          
+                          Variable<-as.character(names(Coefficients))
+                          Estimate<-round(Coefficients,3)
+                          Std_Error<-round(Std_betas,3)
+                          t_value<-round(tBetas,3)
+                          Pr_t<-round(Pvalues,5)
+                          
+                          svar<-data.frame(Variable,Estimate,Std_Error,t_value,Pr_t)
+                          row.names(svar)<-NULL
+                          svar$Variable<-as.character(svar$Variable)
+                          
+                          cat("Call:",sep="\n")
+                          cat(paste("linreg(","formula = ",formula[2]," ",formula[1]," ",formula[3],", ","data = ",DataName,")",sep=""), sep="\n")
+                          cat(sep="\n")
+                          cat("Coefficients:",sep="\n")
+                          cat()
+                          for(i in 1:nrow(svar)){
+                            cat(paste(svar[i,],collapse = " "),sep="",collapse=" ***\n")
+                          }
+                          cat("",sep="\n")
+                          cat(paste("Residual standard error: ",round(sqrt(Var_residuals),5) ," on " ,df, " degrees of freedom",sep=""))
+                        } 
+                      ))
