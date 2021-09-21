@@ -1,0 +1,74 @@
+---
+title: "Lİneer Regression Vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{linregVignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Multiple Regression Model Analysis
+**Introductıon**
+This package is used for multiple regression model analysis. The function in 
+this package called **linreg()**.  This function has two arguments which are **formula**
+and **data**. The functıon takes these arguments and returns an **object**.
+
+### Computations using ordinary least square
+
+#### Regressions coefficients
+
+  ![](a.png)
+
+#### The fitted values
+
+![](b.png)
+
+#### The residuals
+
+![](c.png)
+
+
+#### The degrees of freedom
+
+![](d.png)
+
+
+#### The residual variance
+
+![](e.png)
+
+
+#### The variance of regression coefficients
+
+![](f.png)
+
+
+#### The t-values of each coefficients
+
+![](g.png)
+
+
+
+
+### Example
+
+```{r}
+# Buraya bizim ornegımız gelecek.Alt satırda ornegın outputu gorunecek.
+add <- function(a, b) a + b
+add(10, 20)
+```
+
+
+```{r setup}
+library(rmarkdown)
+library(pander)
+#Burada kullanılan libraryleri yaz
+
+```
+
+
+```{r, results = "asis"}
+pander::pandoc.table(iris[1:3, 1:4])
+#Eğer herhangi bir tablo ekleyeceksek bu şekide ekleyebiliriz. Pander library eklenmesi lazım
+```
+
