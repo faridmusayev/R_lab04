@@ -1,5 +1,25 @@
 
 
+#' Multiple Linear Regression
+#'
+#'This is a multiple linear regression model that take two inputs (formula,data) to initialize.
+#'
+#' @field formula formula with predictors and responses (compulsory input)
+#' @field data data frame with observations (compulsory input)
+#' @field data_name name of data frame
+#' @field coefficients estimated regression coefficients
+#' @field resids residuals (difference between observed and fitted y values)
+#' @field predictors fitted y values
+#' @field df degrees of freedom
+#' @field summ summary of results
+#' @field resid_se Residual Standard Error
+#'
+#' @return Initializes object with class "linreg" that estimates regression coefficients,
+#' standard error, t-value, p-value and residueal standard error from a given formula and data frame
+#' @export
+#'
+#' @examples
+#' linreg$new(Petal.Length~Species, data=iris)
 linreg<-setRefClass("linreg",
                     fields=list(formula='formula',data='data.frame',data_name="character",
                                 coefficients="numeric", resids="numeric",
