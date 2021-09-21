@@ -50,7 +50,7 @@ linreg<-setRefClass("linreg",
                         colnames(x)<-names(coefficients)
 
                         write.table(x,sep="   ",quote=FALSE)
-
+                      },
                      summary=function(){
                        
                        summ<-round(summ,digits=3)
