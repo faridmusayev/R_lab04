@@ -31,7 +31,7 @@ linreg<-setRefClass("linreg",
                       },
                       summary=function(){
 
-                        summ<-round(summ,digits=2)
+                        summ<-round(summ,digits=3)
 
 
                         for (i in 1:length(summ[,4])) {
