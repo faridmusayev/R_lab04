@@ -26,12 +26,25 @@ linreg<-setRefClass("linreg",
 
                         colnames(x)<-names(coefficients)
 
-                        write.table(x,quote=FALSE)
+                        write.table(x,sep="   ",quote=FALSE)
 
                       },
                       summary=function(){
 
-                        #write.table(round(summ,digits=2),quote=FALSE)
+                        summ<-round(summ,digits=2)
+
+
+                        for (i in 1:length(summ[,4])) {
+
+                          if (summ[i,4]<-2.2*10^(-16)) {
+                            summ[i,'4']<-"****"
+                          }
+
+                        }
+
+                        colnames(summ)<-NULL
+
+                        write.table(summ,sep=" ", quote=FALSE)
 
                         cat("Residual standard error:",round(resid_se,digits=2),"on",df,"degrees of freedom")
 
