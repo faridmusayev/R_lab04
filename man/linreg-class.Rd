@@ -32,6 +32,8 @@ This is a multiple linear regression model that take two inputs (formula,data) t
 \item{\code{summ}}{summary of results}
 
 \item{\code{resid_se}}{Residual Standard Error}
+
+\item{\code{res_var}}{standard deviation of residuals}
 }}
 
 

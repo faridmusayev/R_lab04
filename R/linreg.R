@@ -13,6 +13,7 @@
 #' @field df degrees of freedom
 #' @field summ summary of results
 #' @field resid_se Residual Standard Error
+#' @field res_var standard deviation of residuals
 #'
 #' @return Initializes object with class "linreg" that estimates regression coefficients,
 #' standard error, t-value, p-value and residueal standard error from a given formula and data frame
@@ -24,7 +25,7 @@ linreg<-setRefClass("linreg",
                     fields=list(formula='formula',data='data.frame',data_name="character",
                                 coefficients="numeric", resids="numeric",
                                 predictors="numeric",df="numeric",
-                                summ="data.frame",resid_se="numeric"),
+                                summ="data.frame",resid_se="numeric",res_var="numeric"),
                     methods=list(
                       pred=function(){
 
@@ -98,7 +99,7 @@ linreg<-setRefClass("linreg",
 
 
 
-                        std_res <- resids/resid_se
+                        std_res <- resids/res_var
 
                         pl2<-ggplot()+
 
@@ -169,6 +170,8 @@ linreg$methods(initialize=function(formula,data){
   #residual variance
 
   sgm_2<-(t(res)%*%res)/df1
+
+  .self$res_var<<-as.vector(sgm_2^0.5)
 
   #variance of regression coefficients
 
